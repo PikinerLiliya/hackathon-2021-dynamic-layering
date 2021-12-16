@@ -1,13 +1,168 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto' ,sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.content-card {
+  width: 275px;
+  height: 275px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s;
+  border: 1px solid #e9eaeb;
+  margin: 20px;
+  margin-left: 0;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.content-card.selected-card {
+ border: 3px solid #039be5;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.content-card .add-btn {
+  z-index: 20;
+  line-height: 50px;
+  min-width: 0;
+  vertical-align: middle;
+  border-radius: 50%;
+  background-clip: padding-box;
+  overflow: hidden;
+  transition: all .3s cubic-bezier(.55, 0, .55, .2);
+  transition-property: background-color, box-shadow, transform;
+  box-shadow: none;
+  margin: 3px;
+  width: 50px;
+  height: 50px;
+  background-color: #c9cccf;
+  padding: 0 10px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  min-height: 36px;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  color: currentColor;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: inherit;
+  font-variant: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  border: none;
+}
+
+.content-card.selected {
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 1px 5px 0 rgba(23, 32, 44, 0.2), 0 2px 2px 0 rgba(23, 32, 44, 0.1), 0 3px 1px -2px rgba(23, 32, 44, 0.1);
+}
+
+.content-card.selected:hover {
+  background-color: #c9cccf;
+}
+
+.add-btn.edit, .add-btn.delete {
+  visibility: hidden;
+  display: none;
+}
+
+.content-card:hover .add-btn.edit, .content-card:hover .add-btn.delete {
+  visibility: visible;
+  display: block;
+}
+
+.content-card:hover iframe {
+  z-index: -1 !important;
+}
+
+.content-card.selected .add-btn:hover, .content-card .add-btn:hover {
+  background-color: #039be5;
+}
+
+.content-card.selected:hover {
+  background-color: rgba(41, 51, 63, .8)
+}
+
+.content-card.selected .add-btn {
+  background-color: #c9cccf;
+}
+
+.content-background {
+  width: 272px;
+  height: 217px;
+  position: absolute;
+  bottom: 10px;
+  object-fit: contain;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  line-height: 16px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.add-btn img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+iframe.content-background {
+  width: 255px;
+  height: 200px;
+  z-index: 2;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+.MuiSnackbarContent-message {
+  margin: 0;
+}
+
+.MuiSnackbarContent-message svg {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.MuiSnackbar-anchorOriginTopCenter {
+  font-family: sans-serif !important;
+  transform: translate(-50%, -50%) !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  right: unset !important;
+  letter-spacing: normal !important;
+}
+
+.hasChanged {
+  margin-bottom: 0;
+}
+
+.ext-title {
+  padding: 7px 0;
+  min-height: 20px;
+  color: #666;
 }
